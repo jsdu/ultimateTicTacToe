@@ -21,6 +21,11 @@ class ViewController: UIViewController {
     
     @IBOutlet var button0: UIButton!
     
+    @IBOutlet var instructions: UILabel!
+    
+    @IBOutlet var backToGame: UIButton!
+    
+    
     var winner = 0
     var goNum = 0
     
@@ -252,6 +257,21 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    
+    @IBAction func helpPressed(sender: AnyObject) {
+        backToGame.hidden = false
+        instructions.hidden = false
+        
+        
+    }
+    
+    @IBAction func backToGamePressed(sender: AnyObject) {
+         backToGame.hidden = true
+        instructions.hidden = true
+       
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
