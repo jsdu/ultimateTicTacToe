@@ -149,17 +149,17 @@ class ViewController: UIViewController {
                 trueGameState[sender.tag/10] = 3
             }
             
-            // Check for draw in big tic tac toe
-            var checker1 = 0
-            for checkPiece in trueGameState {
-                if checkPiece == 0 {
-                    checker1++
-                }
-            }
-            
-            if checker1 == 0 {
-                winner = 3
-            }
+//            // Check for draw in big tic tac toe
+//            var checker1 = 0
+//            for checkPiece in trueGameState {
+//                if checkPiece == 0 {
+//                    checker1++
+//                }
+//            }
+//            
+//            if checker1 == 0 {
+//                winner = 3
+//            }
             
             // Check for win
             for combination in winningCombinations {
@@ -199,18 +199,20 @@ class ViewController: UIViewController {
                         }
                 }
                 
-//                // Check for draw in big tic tac toe EXCEPTION
-//                checker1 = 0
-//                for checkPiece in trueGameState {
-//                    if checkPiece == 0 {
-//                        checker1++
-//                    }
-//                }
-//                
-//                if checker1 == 0 {
-//                    winner = 3
-//                }
-                
+            }
+            
+            if winner == 0 {
+                // Check for draw in big tic tac toe EXCEPTION
+                var checker1 = 0
+                for checkPiece in trueGameState {
+                    if checkPiece == 0 {
+                        checker1++
+                    }
+                }
+            
+                if checker1 == 0 {
+                    winner = 3
+                }
             }
             
             if winner != 0 {
