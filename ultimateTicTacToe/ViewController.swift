@@ -97,20 +97,21 @@ class ViewController: UIViewController {
     
     @IBAction func buttonPressed(sender: AnyObject) {
         var image = UIImage()
-        
-        if (gameState[sender.tag/10][sender.tag%10] == 0) && winner == 0 {
+        var row = sender.tag/10
+        var col = sender.tag%10
+        if (gameState[row][col] == 0) && winner == 0 {
             
             // Places an X or an O depending on whos turn it is
             if (goNum % 2 == 0) {
                 
                 image = UIImage(named: "x.png")!
-                gameState[sender.tag/10][sender.tag%10] = 2
+                gameState[row][col] = 2
                 result.text = "O Turn"
                 
             } else {
                 
                 image = UIImage(named: "o2.png")!
-                gameState[sender.tag/10][sender.tag%10] = 1
+                gameState[row][col] = 1
                 result.text = "X Turn"
                 
             }
@@ -137,8 +138,8 @@ class ViewController: UIViewController {
 
             // Check for draw in small tic tac toe
             var checker = 0
-            if trueGameState[sender.tag/10] == 0{
-                for numbers in gameState[sender.tag/10] {
+            if trueGameState[row] == 0{
+                for numbers in gameState[row] {
                     if numbers == 0 {
                         checker++
                     }
@@ -146,7 +147,7 @@ class ViewController: UIViewController {
             }
             
             if checker == 0 {
-                trueGameState[sender.tag/10] = 3
+                trueGameState[row] = 3
             }
             
 //            // Check for draw in big tic tac toe
@@ -164,27 +165,27 @@ class ViewController: UIViewController {
             // Check for win
             for combination in winningCombinations {
                 
-                if gameState[sender.tag/10][combination[0]] == gameState[sender.tag/10][combination[1]]
-                    && gameState[sender.tag/10][combination[1]] == gameState[sender.tag/10][combination[2]]
-                    && gameState[sender.tag/10][combination[0]] != 0 {
+                if gameState[row][combination[0]] == gameState[row][combination[1]]
+                    && gameState[row][combination[1]] == gameState[row][combination[2]]
+                    && gameState[row][combination[0]] != 0 {
                         
                         //Hides all the x and o in little tictactoe
                         var button : UIButton
                         for var i = 0; i < 9; i++ {
-                            button = view.viewWithTag(i + (sender.tag/10) * 10) as UIButton
+                            button = view.viewWithTag(i + row * 10) as UIButton
                             button.setImage(nil, forState: .Normal)
                         }
                         
                         //Displays BIG X or BIG O
                         var uiImage : UIImageView
-                        uiImage = view.viewWithTag(100 + (sender.tag/10)) as UIImageView
+                        uiImage = view.viewWithTag(100 + row) as UIImageView
                         
-                        if gameState[sender.tag/10][combination[0]] == 2 {
+                        if gameState[row][combination[0]] == 2 {
                             uiImage.image =  UIImage (named: "x.png")
-                            trueGameState[sender.tag/10] = 2
+                            trueGameState[row] = 2
                         } else if gameState[sender.tag/10][combination[0]] == 1 {
                             uiImage.image = UIImage (named: "o2.png")
-                            trueGameState[sender.tag/10] = 1
+                            trueGameState[row] = 1
                         }
                         
                         // Check for win in big tic tac toe
@@ -193,7 +194,6 @@ class ViewController: UIViewController {
                             if trueGameState[combination2[0]] == trueGameState[combination2[1]] &&
                                 trueGameState[combination2[1]] == trueGameState[combination2[2]] &&
                                 trueGameState[combination2[0]] != 0 && trueGameState[combination2[0]] != 3 {
-                                    
                                     winner = trueGameState[combination2[0]]
                             }
                         }
@@ -229,11 +229,11 @@ class ViewController: UIViewController {
                 var imageBoard : UIImageView
         
                 // If the spot pressed is a valid move
-                if trueGameState[sender.tag % 10] == 0 {
+                if trueGameState[col] == 0 {
             
                     // Show buttons if it is valid move
                     for var i = 0; i < 9; i++ {
-                        if (sender.tag % 10) != i {
+                        if col != i {
                             reveal = view.viewWithTag(200 + i) as UIButton
                             reveal.hidden = false
                         } else {
@@ -264,7 +264,6 @@ class ViewController: UIViewController {
     @IBAction func helpPressed(sender: AnyObject) {
         backToGame.hidden = false
         instructions.hidden = false
-        
         
     }
     
