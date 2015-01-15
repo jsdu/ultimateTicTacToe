@@ -113,7 +113,7 @@ class ViewController: UIViewController {
                 
             } else {
                 
-                imageButton = UIImage(named: "o2.png")!
+                imageButton = UIImage(named: "o.png")!
                 gameState[row][column] = 1
                 result.text = "X Turn"
                 
@@ -174,7 +174,7 @@ class ViewController: UIViewController {
                             uiImage.image =  UIImage (named: "x.png")
                             trueGameState[row] = 2
                         } else if gameState[row][combination[0]] == 1 {
-                            uiImage.image = UIImage (named: "o2.png")
+                            uiImage.image = UIImage (named: "o.png")
                             trueGameState[row] = 1
                         }
                         

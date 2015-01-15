@@ -10,9 +10,8 @@
 		9519AB1C1A5331A10071FF1D /* ticTacToeBoard.png in Resources */ = {isa = PBXBuildFile; fileRef = 9519AB1B1A5331A10071FF1D /* ticTacToeBoard.png */; };
 		9519AB1E1A5335AE0071FF1D /* tictacBoard.png in Resources */ = {isa = PBXBuildFile; fileRef = 9519AB1D1A5335AE0071FF1D /* tictacBoard.png */; };
 		9519AB201A5337380071FF1D /* goBoard.png in Resources */ = {isa = PBXBuildFile; fileRef = 9519AB1F1A5337380071FF1D /* goBoard.png */; };
-		9519AB221A5337E30071FF1D /* o.png in Resources */ = {isa = PBXBuildFile; fileRef = 9519AB211A5337E30071FF1D /* o.png */; };
 		9519AB241A533B2A0071FF1D /* x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9519AB231A533B2A0071FF1D /* x.png */; };
-		9573DDEA1A586A1D00EE6DD8 /* o2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9573DDE91A586A1D00EE6DD8 /* o2.png */; };
+		9573DDEA1A586A1D00EE6DD8 /* o.png in Resources */ = {isa = PBXBuildFile; fileRef = 9573DDE91A586A1D00EE6DD8 /* o.png */; };
 		95781B791A58B2B0003324A2 /* newBoard.png in Resources */ = {isa = PBXBuildFile; fileRef = 95781B781A58B2B0003324A2 /* newBoard.png */; };
 		95781B7D1A58B5BE003324A2 /* goBoard2.png in Resources */ = {isa = PBXBuildFile; fileRef = 95781B7C1A58B5BE003324A2 /* goBoard2.png */; };
 		95B67CE61A54A1F700FC9F3E /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B67CE51A54A1F700FC9F3E /* background.png */; };
@@ -38,9 +37,8 @@
 		9519AB1B1A5331A10071FF1D /* ticTacToeBoard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticTacToeBoard.png; sourceTree = "<group>"; };
 		9519AB1D1A5335AE0071FF1D /* tictacBoard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tictacBoard.png; sourceTree = "<group>"; };
 		9519AB1F1A5337380071FF1D /* goBoard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goBoard.png; sourceTree = "<group>"; };
-		9519AB211A5337E30071FF1D /* o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = o.png; sourceTree = "<group>"; };
 		9519AB231A533B2A0071FF1D /* x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = x.png; sourceTree = "<group>"; };
-		9573DDE91A586A1D00EE6DD8 /* o2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = o2.png; sourceTree = "<group>"; };
+		9573DDE91A586A1D00EE6DD8 /* o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = o.png; sourceTree = "<group>"; };
 		95781B781A58B2B0003324A2 /* newBoard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newBoard.png; sourceTree = "<group>"; };
 		95781B7C1A58B5BE003324A2 /* goBoard2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goBoard2.png; sourceTree = "<group>"; };
 		95B67CE51A54A1F700FC9F3E /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
@@ -103,8 +101,7 @@
 				95781B781A58B2B0003324A2 /* newBoard.png */,
 				95781B7C1A58B5BE003324A2 /* goBoard2.png */,
 				9519AB231A533B2A0071FF1D /* x.png */,
-				9573DDE91A586A1D00EE6DD8 /* o2.png */,
-				9519AB211A5337E30071FF1D /* o.png */,
+				9573DDE91A586A1D00EE6DD8 /* o.png */,
 				95B67CE51A54A1F700FC9F3E /* background.png */,
 				9519AB1D1A5335AE0071FF1D /* tictacBoard.png */,
 				9519AB1B1A5331A10071FF1D /* ticTacToeBoard.png */,
@@ -220,13 +217,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9573DDEA1A586A1D00EE6DD8 /* o2.png in Resources */,
+				9573DDEA1A586A1D00EE6DD8 /* o.png in Resources */,
 				9519AB241A533B2A0071FF1D /* x.png in Resources */,
 				9519AB201A5337380071FF1D /* goBoard.png in Resources */,
 				95781B791A58B2B0003324A2 /* newBoard.png in Resources */,
 				9519AB1C1A5331A10071FF1D /* ticTacToeBoard.png in Resources */,
 				9519AB1E1A5335AE0071FF1D /* tictacBoard.png in Resources */,
-				9519AB221A5337E30071FF1D /* o.png in Resources */,
 				95DD57CD1A4CB74B0032A93C /* Main.storyboard in Resources */,
 				95DD57D21A4CB74B0032A93C /* LaunchScreen.xib in Resources */,
 				95B67CE61A54A1F700FC9F3E /* background.png in Resources */,
