@@ -95,29 +95,31 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func buttonPressed(sender: AnyObject) {
-        var image = UIImage()
-        var row = sender.tag/10
-        var col = sender.tag%10
-        if (gameState[row][col] == 0) && winner == 0 {
+    // Calculates what happens when a move is played
+    func makeMove(row: Int, column: Int) {
+        var buttonPic = UIButton()
+        buttonPic = view.viewWithTag(row*10 + column) as UIButton
+        
+        var imageButton = UIImage()
+        
+        if (gameState[row][column] == 0) && winner == 0 {
             
             // Places an X or an O depending on whos turn it is
             if (goNum % 2 == 0) {
                 
-                image = UIImage(named: "x.png")!
-                gameState[row][col] = 2
+                imageButton = UIImage(named: "x.png")!
+                gameState[row][column] = 2
                 result.text = "O Turn"
                 
             } else {
                 
-                image = UIImage(named: "o2.png")!
-                gameState[row][col] = 1
+                imageButton = UIImage(named: "o2.png")!
+                gameState[row][column] = 1
                 result.text = "X Turn"
                 
             }
             goNum++
-            sender.setImage(image, forState: .Normal)
-            
+            buttonPic.setImage(imageButton, forState: .Normal)
             
             // Hide all buttons
             var hide : UIButton
@@ -135,7 +137,7 @@ class ViewController: UIViewController {
                     normalBoard.image = UIImage (named: "newBoard")
                 }
             }
-
+            
             // Check for draw in small tic tac toe
             var checker = 0
             if trueGameState[row] == 0{
@@ -149,18 +151,6 @@ class ViewController: UIViewController {
             if checker == 0 {
                 trueGameState[row] = 3
             }
-            
-//            // Check for draw in big tic tac toe
-//            var checker1 = 0
-//            for checkPiece in trueGameState {
-//                if checkPiece == 0 {
-//                    checker1++
-//                }
-//            }
-//            
-//            if checker1 == 0 {
-//                winner = 3
-//            }
             
             // Check for win
             for combination in winningCombinations {
@@ -183,7 +173,7 @@ class ViewController: UIViewController {
                         if gameState[row][combination[0]] == 2 {
                             uiImage.image =  UIImage (named: "x.png")
                             trueGameState[row] = 2
-                        } else if gameState[sender.tag/10][combination[0]] == 1 {
+                        } else if gameState[row][combination[0]] == 1 {
                             uiImage.image = UIImage (named: "o2.png")
                             trueGameState[row] = 1
                         }
@@ -194,6 +184,7 @@ class ViewController: UIViewController {
                             if trueGameState[combination2[0]] == trueGameState[combination2[1]] &&
                                 trueGameState[combination2[1]] == trueGameState[combination2[2]] &&
                                 trueGameState[combination2[0]] != 0 && trueGameState[combination2[0]] != 3 {
+                                    
                                     winner = trueGameState[combination2[0]]
                             }
                         }
@@ -209,7 +200,7 @@ class ViewController: UIViewController {
                         checker1++
                     }
                 }
-            
+                
                 if checker1 == 0 {
                     winner = 3
                 }
@@ -224,16 +215,16 @@ class ViewController: UIViewController {
                     result.text = "Draw!"
                 }
             } else {
-    
+                
                 var reveal : UIButton
                 var imageBoard : UIImageView
-        
+                
                 // If the spot pressed is a valid move
-                if trueGameState[col] == 0 {
-            
+                if trueGameState[column] == 0 {
+                    
                     // Show buttons if it is valid move
                     for var i = 0; i < 9; i++ {
-                        if col != i {
+                        if column != i {
                             reveal = view.viewWithTag(200 + i) as UIButton
                             reveal.hidden = false
                         } else {
@@ -241,7 +232,7 @@ class ViewController: UIViewController {
                             imageBoard.image =  UIImage (named: "goBoard2.png")
                         }
                     }
-                
+                    
                     // If the spot is not a valid move
                 } else {
                     // Shows all valid possible moves
@@ -259,6 +250,13 @@ class ViewController: UIViewController {
         }
         
     }
+
+    // When the user presses a square on the board
+    @IBAction func buttonPressed(sender: AnyObject) {
+
+        makeMove(sender.tag/10, column: sender.tag%10)
+    }
+    
     
     
     @IBAction func helpPressed(sender: AnyObject) {
