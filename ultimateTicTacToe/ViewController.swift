@@ -42,10 +42,29 @@ class ViewController: UIViewController {
     
     var trueGameState = [0,0,0,0,0,0,0,0,0]
     
+    // Keeps track of valid places to go
+    // 0 is not valid, 1 is valid
+    var validMoveState = [0,0,0,0,0,0,0,0,0]
+    
     // All the possible winning combinations
     let winningCombinations = [[0,1,2], [3,4,5], [6,7,8],
                               [0,3,6], [1,4,7], [2,5,8],
                               [0,4,8], [2,4,6]]
+    
+    // Returns a list of all the empty squares th
+    func validMoves()->[Int] {
+        var validIndex = [Int]()
+        for var i = 0; i < 9; i++ {
+            if validMoveState[i] == 1 {
+                for var j = 0; j < 9; j++ {
+                    if gameState[i][j] == 0{
+                        validIndex.append (i*10 + j)
+                    }
+                }
+            }
+        }
+        return validIndex
+    }
     
     @IBAction func playAgain(sender: AnyObject) {
         
@@ -95,7 +114,8 @@ class ViewController: UIViewController {
         }
     }
     
-    // Calculates what happens when a move is played
+    // Places piece on the board
+    // Checks if game is won/draw
     func makeMove(row: Int, column: Int) {
         var buttonPic = UIButton()
         buttonPic = view.viewWithTag(row*10 + column) as UIButton
@@ -192,8 +212,8 @@ class ViewController: UIViewController {
                 
             }
             
+            // Check for draw in big tic tac toe EXCEPTION
             if winner == 0 {
-                // Check for draw in big tic tac toe EXCEPTION
                 var checker1 = 0
                 for checkPiece in trueGameState {
                     if checkPiece == 0 {
@@ -222,27 +242,32 @@ class ViewController: UIViewController {
                 // If the spot pressed is a valid move
                 if trueGameState[column] == 0 {
                     
-                    // Show buttons if it is valid move
+                    // Shows buttons if it is valid move
+                    // Highlights where to put next move
                     for var i = 0; i < 9; i++ {
                         if column != i {
                             reveal = view.viewWithTag(200 + i) as UIButton
                             reveal.hidden = false
+                            validMoveState[i] = 0
                         } else {
                             imageBoard = view.viewWithTag(100 + i) as UIImageView
                             imageBoard.image =  UIImage (named: "goBoard2.png")
+                            validMoveState[i] = 1
                         }
                     }
                     
-                    // If the spot is not a valid move
+                // If the spot is not a valid move
                 } else {
                     // Shows all valid possible moves
                     for var i = 0; i < 9; i++ {
                         if trueGameState[i] != 0 {
                             reveal = view.viewWithTag(200 + i) as UIButton
                             reveal.hidden = false
+                            validMoveState[i] = 0
                         } else {
                             imageBoard = view.viewWithTag(100 + i) as UIImageView
                             imageBoard.image =  UIImage (named: "goBoard2.png")
+                            validMoveState[i] = 1
                         }
                     }
                 }
@@ -255,6 +280,11 @@ class ViewController: UIViewController {
     @IBAction func buttonPressed(sender: AnyObject) {
 
         makeMove(sender.tag/10, column: sender.tag%10)
+        
+        // 1 player vs computer (Plays a random move)
+        var moves = validMoves()
+        var randomIndex = Int(arc4random_uniform(UInt32(moves.count)))
+        makeMove(moves[randomIndex]/10, column: moves[randomIndex]%10)
     }
     
     
