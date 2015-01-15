@@ -4,19 +4,19 @@ An ultimate tic tac toe game
 
 2 player game
 
+Inspired by http://mathwithbaddrawings.com/2013/06/16/ultimate-tic-tac-toe/
+
 RULES
 ---------------------
-X starts first
+Win three games of Tic Tac Toe in a row.
 
-Wherever X goes in the small tic tac toe box,
+You may only play in the big field that
 
-O must play in the box relative to the big tic tac toe box
+corresponds to the last small field your
 
-If the opponent sends the player to a board that is already filled or won, 
+opponent played. When you are sent to a
 
-the player can play in any box that is not filled.
+field that is already decided, you can
 
-If the small tic tac toe board ends in a draw, then the board is neither an
-
-X or an O
+choose freely.
 
