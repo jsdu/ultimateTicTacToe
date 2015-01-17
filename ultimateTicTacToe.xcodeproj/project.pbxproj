@@ -9,11 +9,10 @@
 /* Begin PBXBuildFile section */
 		9519AB1C1A5331A10071FF1D /* ticTacToeBoard.png in Resources */ = {isa = PBXBuildFile; fileRef = 9519AB1B1A5331A10071FF1D /* ticTacToeBoard.png */; };
 		9519AB1E1A5335AE0071FF1D /* tictacBoard.png in Resources */ = {isa = PBXBuildFile; fileRef = 9519AB1D1A5335AE0071FF1D /* tictacBoard.png */; };
-		9519AB201A5337380071FF1D /* goBoard.png in Resources */ = {isa = PBXBuildFile; fileRef = 9519AB1F1A5337380071FF1D /* goBoard.png */; };
 		9519AB241A533B2A0071FF1D /* x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9519AB231A533B2A0071FF1D /* x.png */; };
 		9573DDEA1A586A1D00EE6DD8 /* o.png in Resources */ = {isa = PBXBuildFile; fileRef = 9573DDE91A586A1D00EE6DD8 /* o.png */; };
 		95781B791A58B2B0003324A2 /* newBoard.png in Resources */ = {isa = PBXBuildFile; fileRef = 95781B781A58B2B0003324A2 /* newBoard.png */; };
-		95781B7D1A58B5BE003324A2 /* goBoard2.png in Resources */ = {isa = PBXBuildFile; fileRef = 95781B7C1A58B5BE003324A2 /* goBoard2.png */; };
+		95781B7D1A58B5BE003324A2 /* goBoard.png in Resources */ = {isa = PBXBuildFile; fileRef = 95781B7C1A58B5BE003324A2 /* goBoard.png */; };
 		95B67CE61A54A1F700FC9F3E /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B67CE51A54A1F700FC9F3E /* background.png */; };
 		95DD57C81A4CB74B0032A93C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD57C71A4CB74B0032A93C /* AppDelegate.swift */; };
 		95DD57CA1A4CB74B0032A93C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD57C91A4CB74B0032A93C /* ViewController.swift */; };
@@ -36,11 +35,10 @@
 /* Begin PBXFileReference section */
 		9519AB1B1A5331A10071FF1D /* ticTacToeBoard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticTacToeBoard.png; sourceTree = "<group>"; };
 		9519AB1D1A5335AE0071FF1D /* tictacBoard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tictacBoard.png; sourceTree = "<group>"; };
-		9519AB1F1A5337380071FF1D /* goBoard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goBoard.png; sourceTree = "<group>"; };
 		9519AB231A533B2A0071FF1D /* x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = x.png; sourceTree = "<group>"; };
 		9573DDE91A586A1D00EE6DD8 /* o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = o.png; sourceTree = "<group>"; };
 		95781B781A58B2B0003324A2 /* newBoard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newBoard.png; sourceTree = "<group>"; };
-		95781B7C1A58B5BE003324A2 /* goBoard2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goBoard2.png; sourceTree = "<group>"; };
+		95781B7C1A58B5BE003324A2 /* goBoard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goBoard.png; sourceTree = "<group>"; };
 		95B67CE51A54A1F700FC9F3E /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		95DD57C21A4CB74B0032A93C /* ultimateTicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ultimateTicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95DD57C61A4CB74B0032A93C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,9 +95,8 @@
 				95DD57C91A4CB74B0032A93C /* ViewController.swift */,
 				95DD57CB1A4CB74B0032A93C /* Main.storyboard */,
 				95DD57CE1A4CB74B0032A93C /* Images.xcassets */,
-				9519AB1F1A5337380071FF1D /* goBoard.png */,
 				95781B781A58B2B0003324A2 /* newBoard.png */,
-				95781B7C1A58B5BE003324A2 /* goBoard2.png */,
+				95781B7C1A58B5BE003324A2 /* goBoard.png */,
 				9519AB231A533B2A0071FF1D /* x.png */,
 				9573DDE91A586A1D00EE6DD8 /* o.png */,
 				95B67CE51A54A1F700FC9F3E /* background.png */,
@@ -219,7 +216,6 @@
 			files = (
 				9573DDEA1A586A1D00EE6DD8 /* o.png in Resources */,
 				9519AB241A533B2A0071FF1D /* x.png in Resources */,
-				9519AB201A5337380071FF1D /* goBoard.png in Resources */,
 				95781B791A58B2B0003324A2 /* newBoard.png in Resources */,
 				9519AB1C1A5331A10071FF1D /* ticTacToeBoard.png in Resources */,
 				9519AB1E1A5335AE0071FF1D /* tictacBoard.png in Resources */,
@@ -227,7 +223,7 @@
 				95DD57D21A4CB74B0032A93C /* LaunchScreen.xib in Resources */,
 				95B67CE61A54A1F700FC9F3E /* background.png in Resources */,
 				95DD57CF1A4CB74B0032A93C /* Images.xcassets in Resources */,
-				95781B7D1A58B5BE003324A2 /* goBoard2.png in Resources */,
+				95781B7D1A58B5BE003324A2 /* goBoard.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
