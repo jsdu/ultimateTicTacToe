@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "95DD57C11A4CB74B0032A93C"
-               BuildableName = "ultimateTicTacToe.app"
-               BlueprintName = "ultimateTicTacToe"
-               ReferencedContainer = "container:ultimateTicTacToe.xcodeproj">
+               BuildableName = "uTicTacToe.app"
+               BlueprintName = "uTicTacToe"
+               ReferencedContainer = "container:uTicTacToe.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "95DD57D61A4CB74B0032A93C"
-               BuildableName = "ultimateTicTacToeTests.xctest"
-               BlueprintName = "ultimateTicTacToeTests"
-               ReferencedContainer = "container:ultimateTicTacToe.xcodeproj">
+               BuildableName = "uTicTacToeTests.xctest"
+               BlueprintName = "uTicTacToeTests"
+               ReferencedContainer = "container:uTicTacToe.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "95DD57D61A4CB74B0032A93C"
-               BuildableName = "ultimateTicTacToeTests.xctest"
-               BlueprintName = "ultimateTicTacToeTests"
-               ReferencedContainer = "container:ultimateTicTacToe.xcodeproj">
+               BuildableName = "uTicTacToeTests.xctest"
+               BlueprintName = "uTicTacToeTests"
+               ReferencedContainer = "container:uTicTacToe.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "95DD57C11A4CB74B0032A93C"
-            BuildableName = "ultimateTicTacToe.app"
-            BlueprintName = "ultimateTicTacToe"
-            ReferencedContainer = "container:ultimateTicTacToe.xcodeproj">
+            BuildableName = "uTicTacToe.app"
+            BlueprintName = "uTicTacToe"
+            ReferencedContainer = "container:uTicTacToe.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "95DD57C11A4CB74B0032A93C"
-            BuildableName = "ultimateTicTacToe.app"
-            BlueprintName = "ultimateTicTacToe"
-            ReferencedContainer = "container:ultimateTicTacToe.xcodeproj">
+            BuildableName = "uTicTacToe.app"
+            BlueprintName = "uTicTacToe"
+            ReferencedContainer = "container:uTicTacToe.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "95DD57C11A4CB74B0032A93C"
-            BuildableName = "ultimateTicTacToe.app"
-            BlueprintName = "ultimateTicTacToe"
-            ReferencedContainer = "container:ultimateTicTacToe.xcodeproj">
+            BuildableName = "uTicTacToe.app"
+            BlueprintName = "uTicTacToe"
+            ReferencedContainer = "container:uTicTacToe.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
