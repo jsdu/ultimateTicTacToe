@@ -2050,13 +2050,12 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Rgz-dR-sYt" secondAttribute="height" multiplier="1:1" id="TOa-Od-cCR"/>
                                 </constraints>
-                                <string key="text">Instructions                                                                                              Win three games of Tic Tac Toe in a row.
-You may only play in the big field that
+                                <string key="text">Instructions                                                                                              Win three games of Tic Tac Toe in a row!
+You can only play in the big field that
 corresponds to the last small field your
 opponent played. When you are sent to a
-field that is already decided, you can
-choose freely.
-</string>
+field that is already decided, you are able
+choose freely.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
