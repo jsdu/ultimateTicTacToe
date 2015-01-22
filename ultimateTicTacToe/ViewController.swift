@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var backToGame: UIButton!
     
+    @IBOutlet var instructionsText: UITextView!
     
     var winner = 0
     var goNum = 0
@@ -325,12 +326,14 @@ class ViewController: UIViewController {
     @IBAction func helpPressed(sender: AnyObject) {
         backToGame.hidden = false
         instructions.hidden = false
+        instructionsText.hidden = false
         
     }
     
     @IBAction func backToGamePressed(sender: AnyObject) {
          backToGame.hidden = true
         instructions.hidden = true
+        instructionsText.hidden = true
        
     }
     

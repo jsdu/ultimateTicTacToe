@@ -2044,18 +2044,12 @@
                                     <action selector="helpPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="TUp-Pe-FKE"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="305" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="clip" numberOfLines="8" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rgz-dR-sYt">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="305" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="clip" numberOfLines="8" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rgz-dR-sYt">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Rgz-dR-sYt" secondAttribute="height" multiplier="1:1" id="TOa-Od-cCR"/>
                                 </constraints>
-                                <string key="text">Instructions                                                                                              Win three games of Tic Tac Toe in a row!
-You can only play in the big field that
-corresponds to the last small field your
-opponent played. When you are sent to a
-field that is already decided, you are able
-choose freely.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -2098,6 +2092,14 @@ choose freely.</string>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVF-MY-R9g">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <string key="text">Instructions                                                                                              Win three games of Tic Tac Toe in a row!
+You can only play in the big field that corresponds to the last small field your opponent played. When you are sent to a field that is already decided, you get to choose freely.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -2264,6 +2266,9 @@ choose freely.</string>
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="Yx3-XV-eWU" firstAttribute="leading" secondItem="Nqw-9O-s5X" secondAttribute="leading" id="FQg-Vh-mM6"/>
+                            <constraint firstAttribute="trailing" secondItem="nVF-MY-R9g" secondAttribute="trailing" constant="16" id="FX9-t0-wMq">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="iGx-gU-97x" firstAttribute="top" secondItem="ZR9-8d-UwM" secondAttribute="bottom" constant="8" id="FZx-Q0-3yB">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
@@ -2278,6 +2283,9 @@ choose freely.</string>
                             </constraint>
                             <constraint firstItem="03o-1b-Qh4" firstAttribute="width" secondItem="UVx-36-DdA" secondAttribute="width" id="G3E-8u-n03"/>
                             <constraint firstItem="fzy-An-Q2c" firstAttribute="top" secondItem="fae-g7-nYk" secondAttribute="bottom" constant="8" id="G3b-gZ-bLs">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="hQS-2Y-Xop" firstAttribute="bottom" secondItem="nVF-MY-R9g" secondAttribute="bottom" constant="19" id="G4E-g5-W2c">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="dkj-0I-7ES" firstAttribute="leading" secondItem="Ybr-bz-4eg" secondAttribute="trailing" id="GUW-CZ-VTD"/>
@@ -2394,6 +2402,9 @@ choose freely.</string>
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="ZR9-8d-UwM" firstAttribute="leading" secondItem="dvq-TD-Ss1" secondAttribute="trailing" constant="-1" id="ScG-Ce-k37"/>
+                            <constraint firstItem="nVF-MY-R9g" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="-6" id="Se3-YO-PoM">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="Ybr-bz-4eg" firstAttribute="width" secondItem="p1K-2t-GrS" secondAttribute="height" multiplier="3:1" id="Skx-1H-qpP"/>
                             <constraint firstItem="Hsi-T9-1FE" firstAttribute="leading" secondItem="hqs-AG-CHA" secondAttribute="trailing" constant="3" id="T6R-Zo-WJe">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
@@ -2722,6 +2733,9 @@ choose freely.</string>
                             <constraint firstItem="d92-FN-QR6" firstAttribute="top" secondItem="S89-nL-h9f" secondAttribute="bottom" constant="-3" id="w4r-xo-YBP">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="NcU-eI-2u2" firstAttribute="top" secondItem="nVF-MY-R9g" secondAttribute="top" constant="-38" id="wLZ-PJ-gR4">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="q8d-VT-sdI" firstAttribute="top" secondItem="rs3-8X-zTz" secondAttribute="bottom" constant="4" id="wME-lc-RfM">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
@@ -2765,6 +2779,7 @@ choose freely.</string>
                                 <exclude reference="UVx-36-DdA"/>
                                 <exclude reference="Rgz-dR-sYt"/>
                                 <exclude reference="ZVU-Ar-upB"/>
+                                <exclude reference="nVF-MY-R9g"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="5Tw-Kr-8tJ"/>
@@ -2781,6 +2796,8 @@ choose freely.</string>
                                 <exclude reference="WqM-Uw-uLl"/>
                                 <exclude reference="BBb-2a-CMH"/>
                                 <exclude reference="ptu-Yp-jXP"/>
+                                <exclude reference="FX9-t0-wMq"/>
+                                <exclude reference="Se3-YO-PoM"/>
                                 <exclude reference="jWe-J5-IIM"/>
                                 <exclude reference="nGM-fY-JRa"/>
                                 <exclude reference="uPO-3x-fd2"/>
@@ -2887,6 +2904,7 @@ choose freely.</string>
                                 <exclude reference="4xz-4J-1x1"/>
                                 <exclude reference="c3c-da-D1h"/>
                                 <exclude reference="sp5-v5-Stn"/>
+                                <exclude reference="wLZ-PJ-gR4"/>
                                 <exclude reference="yog-PW-QD8"/>
                                 <exclude reference="2jo-ay-DdS"/>
                                 <exclude reference="60Y-zZ-VE5"/>
@@ -2956,6 +2974,7 @@ choose freely.</string>
                                 <exclude reference="TPx-j5-q4M"/>
                                 <exclude reference="Ut2-dA-o7d"/>
                                 <exclude reference="BYG-XO-GJ9"/>
+                                <exclude reference="G4E-g5-W2c"/>
                                 <exclude reference="IK9-to-noo"/>
                                 <exclude reference="Jwb-Ur-8Nx"/>
                                 <exclude reference="VLE-j0-tge"/>
@@ -3112,6 +3131,7 @@ choose freely.</string>
                                 <include reference="UVx-36-DdA"/>
                                 <include reference="Rgz-dR-sYt"/>
                                 <include reference="ZVU-Ar-upB"/>
+                                <include reference="nVF-MY-R9g"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="5Tw-Kr-8tJ"/>
@@ -3128,6 +3148,8 @@ choose freely.</string>
                                 <include reference="WqM-Uw-uLl"/>
                                 <include reference="BBb-2a-CMH"/>
                                 <include reference="ptu-Yp-jXP"/>
+                                <include reference="FX9-t0-wMq"/>
+                                <include reference="Se3-YO-PoM"/>
                                 <include reference="jWe-J5-IIM"/>
                                 <include reference="nGM-fY-JRa"/>
                                 <include reference="uPO-3x-fd2"/>
@@ -3234,6 +3256,7 @@ choose freely.</string>
                                 <include reference="4xz-4J-1x1"/>
                                 <include reference="c3c-da-D1h"/>
                                 <include reference="sp5-v5-Stn"/>
+                                <include reference="wLZ-PJ-gR4"/>
                                 <include reference="yog-PW-QD8"/>
                                 <include reference="2jo-ay-DdS"/>
                                 <include reference="60Y-zZ-VE5"/>
@@ -3303,6 +3326,7 @@ choose freely.</string>
                                 <include reference="TPx-j5-q4M"/>
                                 <include reference="Ut2-dA-o7d"/>
                                 <include reference="BYG-XO-GJ9"/>
+                                <include reference="G4E-g5-W2c"/>
                                 <include reference="IK9-to-noo"/>
                                 <include reference="Jwb-Ur-8Nx"/>
                                 <include reference="VLE-j0-tge"/>
@@ -3461,6 +3485,7 @@ choose freely.</string>
                         <outlet property="board0" destination="w97-Wi-Jfa" id="P3T-TX-BFU"/>
                         <outlet property="button0" destination="L1W-Wc-Q5y" id="YnY-o5-HVS"/>
                         <outlet property="instructions" destination="Rgz-dR-sYt" id="LEq-GN-YW1"/>
+                        <outlet property="instructionsText" destination="nVF-MY-R9g" id="Egg-ch-XM2"/>
                         <outlet property="playAgainButton" destination="jPx-yy-VYm" id="8bV-NF-3sc"/>
                         <outlet property="result" destination="D5m-x6-cMc" id="nME-Qd-Wli"/>
                     </connections>
