@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var instructionsText: UITextView!
     
+    var randomCounter = 0
     var winner = 0
     var goNum = 0
     
@@ -53,12 +54,12 @@ class ViewController: UIViewController {
                               [0,4,8], [2,4,6]]
     
     // Returns an array of all the possible moves
-    func validMoves()->[Int] {
+    func validMoves(fngameState: [[Int]])->[Int] {
         var validIndex = [Int]()
         for var i = 0; i < 9; i++ {
             if validMoveState[i] == 1 {
                 for var j = 0; j < 9; j++ {
-                    if gameState[i][j] == 0{
+                    if fngameState[i][j] == 0{
                         validIndex.append (i*10 + j)
                     }
                 }
@@ -82,7 +83,7 @@ class ViewController: UIViewController {
                      [0,0,0,0,0,0,0,0,0]]
         
         trueGameState = [0,0,0,0,0,0,0,0,0]
-        
+        validMoveState = [0,0,0,0,0,0,0,0,0]
          winner = 0
          goNum = 0
         
@@ -113,6 +114,11 @@ class ViewController: UIViewController {
             
             }
         }
+    }
+    
+    // Main Menu Button is pressed
+    @IBAction func mainMenu(sender: AnyObject){
+        self.dismissViewControllerAnimated (true, completion: nil)
     }
     
     // Places piece on the board
@@ -176,6 +182,7 @@ class ViewController: UIViewController {
             // Check for win
             for combination in winningCombinations {
                 
+                // Checks for win in small tic tac toe
                 if gameState[row][combination[0]] == gameState[row][combination[1]]
                     && gameState[row][combination[1]] == gameState[row][combination[2]]
                     && gameState[row][combination[0]] != 0 {
@@ -191,6 +198,7 @@ class ViewController: UIViewController {
                         var uiImage : UIImageView
                         uiImage = view.viewWithTag(100 + row) as UIImageView
                         
+                        // Changes the true game state accordingly
                         if gameState[row][combination[0]] == 2 {
                             uiImage.image =  UIImage (named: "x.png")
                             trueGameState[row] = 2
@@ -279,48 +287,92 @@ class ViewController: UIViewController {
 
     // When the user presses a square on the board
     @IBAction func buttonPressed(sender: AnyObject) {
-
+        if gameMode == 1{
         makeMove(sender.tag/10, column: sender.tag%10)
-        
-        // 1 player vs computer (Plays a random move)
-        var moves = validMoves()
-//        println(moves)
-//        if winner == 0 {
-//        var randomIndex = Int(arc4random_uniform(UInt32(moves.count)))
-//        makeMove(moves[randomIndex]/10, column: moves[randomIndex]%10)
-//        computerMove()
-//          }
-    }
-    
-    // player is either 1 for computer or 2 for player
-    func computerMove(player: Int) {
-        var moves = validMoves()
-        var testBoard = gameState
-        var scores = [Int]()
-        
-        for testMove in moves {
-            
-            // places piece in test board
-            testBoard[testMove/10][testMove%10] = player
-            
-            // checks for win for computer
-            for combination in winningCombinations {
-                
-                // If computer wins
-                if testBoard[testMove/10][combination[0]] == testBoard[testMove/10][combination[1]]
-                && testBoard[testMove/10][combination[1]] == testBoard[testMove/10][combination[2]]
-                && testBoard[testMove/10][combination[0]] != 0 {
-                    scores.append(100)
+        } else {
+            if (gameState[sender.tag/10][sender.tag%10] == 0) {
+                makeMove(sender.tag/10, column: sender.tag%10)
+                if winner == 0 {
+                    var moves = validMoves(gameState)
+                    var randomIndex = Int(arc4random_uniform(UInt32(moves.count)))
+                    makeMove(moves[randomIndex]/10, column: moves[randomIndex]%10)
                 }
             }
-            
-            //Checks for win for player and tries to block
-            computerMove(1)
-            
-            testBoard = gameState
         }
-        
+        // 1 player vs computer (Plays a random move)
+//        var moves = validMoves(gameState)
+//        println(moves)
+//        if winner == 0 {
+//            if randomCounter < 7 {
+//                var randomIndex = Int(arc4random_uniform(UInt32(moves.count)))
+//                makeMove(moves[randomIndex]/10, column: moves[randomIndex]%10)
+//                randomCounter++
+//            } else {
+//                var scoreSize = validMoves().count
+//                var scores = [Int]()
+//                while scoreSize > 0 {
+//                    scores.append(0)
+//                }
+//                computerMove(gameState, compCount: 2, player: 1)
+//                randomCounter++
+//            }
+//        }
     }
+//    func gameWonSmall (testMove: Int, testBoard: [[Int]], player: Int)-> Bool{
+//        
+//        for combination in winningCombinations{
+//
+//            if testBoard[testMove/10][combination[0]] == testBoard[testMove/10][combination[1]]
+//                && testBoard[testMove/10][combination[1]] == testBoard[testMove/10][combination[2]]
+//                && testBoard[testMove/10][combination[0]] == player {
+//                    return true
+//            } else {
+//                return false
+//            }
+//        }
+//    }
+//
+//    func score (testBoard: [[Int]]){
+//        if gameWonBig(1 ) == true{
+//            return 100;
+//        } else if gameWonSmall(1) == true{
+//            return 10
+//        } else if gameWonBig(2) == true{
+//            return -100;
+//        } else if gameWonSmall(2) == true{
+//            return -10;
+//        } else {
+//            return 0;
+//        }
+//    }
+//    // player is either 1 for computer or 2 for player
+//    func computerMove(testBoard: [[Int]], compCount: Int, player: Int) {
+//        
+//        var movefn = validMoves()
+//        var testBrdfn = testBoard
+//        if compCount == 0 {
+//            println("done")
+//        }
+//        for (index,testMove) in enumerate(movefn) {
+//            
+//            // places piece in test board
+//            testBrdfn[testMove/10][testMove%10] = player
+//            
+//            // checks for win for computer
+//            for combination in winningCombinations {
+//                
+//                // If computer wins
+//                if testBrdfn[testMove/10][combination[0]] == testBrdfn[testMove/10][combination[1]]
+//                && testBrdfn[testMove/10][combination[1]] == testBrdfn[testMove/10][combination[2]]
+//                && testBrdfn[testMove/10][combination[0]] != 0 {
+//                    movefn[index] = 100
+//                }
+//            }
+//            //Checks for win for player and tries to block
+//            
+//        }
+//        
+//    }
 
     
     @IBAction func helpPressed(sender: AnyObject) {

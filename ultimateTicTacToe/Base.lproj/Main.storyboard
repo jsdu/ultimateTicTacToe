@@ -1,10 +1,283 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0cG-4E-vdi">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="cOO-al-jrS">
+            <objects>
+                <viewController id="0cG-4E-vdi" customClass="mainViewController" customModule="uTicTacToe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2ih-3n-rnl"/>
+                        <viewControllerLayoutGuide type="bottom" id="jtb-VC-tRM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4J3-tg-HAn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainmenu.png" translatesAutoresizingMaskIntoConstraints="NO" id="1gI-s2-TwG">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1gI-s2-TwG" secondAttribute="height" multiplier="1:1" id="LWE-Ya-0kX"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="LWE-Ya-0kX"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="LWE-Ya-0kX"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3t-w7-efN">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="1 Player">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onePlayer:" destination="0cG-4E-vdi" eventType="touchUpInside" id="aDP-Zu-Gk5"/>
+                                    <segue destination="vXZ-lx-hvc" kind="presentation" modalTransitionStyle="crossDissolve" id="hoS-Wi-Pw8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iW7-Kx-cUG">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="2 Player">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="twoPlayer:" destination="0cG-4E-vdi" eventType="touchUpInside" id="U3J-05-B4k"/>
+                                    <segue destination="vXZ-lx-hvc" kind="presentation" modalTransitionStyle="crossDissolve" id="TTh-Hx-HPK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LbK-IE-Szj">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Instructions">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="instructionPressed:" destination="0cG-4E-vdi" eventType="touchUpInside" id="nAX-fQ-OT6"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gfj-EZ-rel">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                            <textView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBv-N0-dhE">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.019607843137254902" green="0.24705882352941178" blue="0.58039215686274515" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.020777612500000001" green="0.29226048090000001" blue="0.69045552249999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nBv-N0-dhE" secondAttribute="height" multiplier="1:1" id="tzl-CX-VcC"/>
+                                </constraints>
+                                <string key="text">Instructions                                                                                                               Win three games of Tic Tac Toe in a row!
+You can only play in the big field that corresponds to the last small field your opponent played. When you are sent to a field that is already decided, you get to choose freely.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="tzl-CX-VcC"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="tzl-CX-VcC"/>
+                                    </mask>
+                                </variation>
+                            </textView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYG-fu-RLf">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Back to Main Menu">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backToMenuPressed:" destination="0cG-4E-vdi" eventType="touchUpInside" id="bN1-io-D43"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyBox.png" translatesAutoresizingMaskIntoConstraints="NO" id="pYT-yS-CyW">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LbK-IE-Szj" firstAttribute="top" secondItem="iW7-Kx-cUG" secondAttribute="bottom" constant="-12" id="0Gc-Nu-vZX">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="h3t-w7-efN" firstAttribute="leading" secondItem="4J3-tg-HAn" secondAttribute="leading" constant="37" id="0V6-4Z-8DI">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstAttribute="bottom" secondItem="pYT-yS-CyW" secondAttribute="bottom" constant="25" id="2tg-DR-sbe">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="iW7-Kx-cUG" firstAttribute="top" secondItem="h3t-w7-efN" secondAttribute="bottom" constant="54" id="3LI-Lw-OoD">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="pYT-yS-CyW" secondAttribute="trailing" constant="78" id="42W-Sm-xLZ">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="bYG-fu-RLf" firstAttribute="height" secondItem="LbK-IE-Szj" secondAttribute="height" id="4Ls-Iq-jnI"/>
+                            <constraint firstItem="nBv-N0-dhE" firstAttribute="leading" secondItem="4J3-tg-HAn" secondAttribute="leading" constant="16" id="4oU-eh-Dwk">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="h3t-w7-efN" firstAttribute="top" secondItem="Gfj-EZ-rel" secondAttribute="bottom" constant="22" id="5fR-dm-x01">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="iW7-Kx-cUG" firstAttribute="width" secondItem="h3t-w7-efN" secondAttribute="width" id="7Er-WT-YnH"/>
+                            <constraint firstAttribute="trailing" secondItem="nBv-N0-dhE" secondAttribute="trailing" constant="-16" id="AK3-V8-APD">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="bYG-fu-RLf" firstAttribute="top" secondItem="iW7-Kx-cUG" secondAttribute="bottom" constant="138" id="ItE-PF-dUr">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="1gI-s2-TwG" firstAttribute="width" secondItem="h3t-w7-efN" secondAttribute="height" multiplier="3:1" id="MoH-i7-g2K"/>
+                            <constraint firstItem="LbK-IE-Szj" firstAttribute="width" secondItem="iW7-Kx-cUG" secondAttribute="width" id="NL3-Na-x2z"/>
+                            <constraint firstItem="pYT-yS-CyW" firstAttribute="top" secondItem="bYG-fu-RLf" secondAttribute="bottom" constant="8" id="OfP-zG-uLj">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="LbK-IE-Szj" secondAttribute="centerX" id="P3A-Ls-3bm"/>
+                            <constraint firstItem="bYG-fu-RLf" firstAttribute="width" secondItem="LbK-IE-Szj" secondAttribute="width" id="SMp-rO-KsT"/>
+                            <constraint firstAttribute="centerX" secondItem="bYG-fu-RLf" secondAttribute="centerX" id="Uva-Xc-5Ds"/>
+                            <constraint firstItem="pYT-yS-CyW" firstAttribute="leading" secondItem="4J3-tg-HAn" secondAttribute="leading" constant="96" id="Wd0-MO-kUf">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstAttribute="centerY" secondItem="iW7-Kx-cUG" secondAttribute="centerY" id="Wf4-T3-5T8"/>
+                            <constraint firstAttribute="centerX" secondItem="iW7-Kx-cUG" secondAttribute="centerX" id="a5b-cr-ghm"/>
+                            <constraint firstItem="iW7-Kx-cUG" firstAttribute="height" secondItem="h3t-w7-efN" secondAttribute="height" id="apL-U3-Gu9"/>
+                            <constraint firstAttribute="centerY" secondItem="1gI-s2-TwG" secondAttribute="centerY" id="bBy-lQ-wX3"/>
+                            <constraint firstItem="Gfj-EZ-rel" firstAttribute="top" secondItem="4J3-tg-HAn" secondAttribute="top" constant="11" id="ffP-Y8-sRh">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstAttribute="centerY" secondItem="nBv-N0-dhE" secondAttribute="centerY" id="gEh-S5-eEp"/>
+                            <constraint firstItem="1gI-s2-TwG" firstAttribute="leading" secondItem="4J3-tg-HAn" secondAttribute="leading" constant="87" id="hoa-kd-PBq">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="Gfj-EZ-rel" firstAttribute="leading" secondItem="4J3-tg-HAn" secondAttribute="leading" constant="58" id="jS1-YY-dmc">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="h3t-w7-efN" secondAttribute="trailing" constant="145" id="jnX-sY-Z0k">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="LbK-IE-Szj" firstAttribute="height" secondItem="iW7-Kx-cUG" secondAttribute="height" id="jq4-No-7y4"/>
+                            <constraint firstAttribute="centerX" secondItem="nBv-N0-dhE" secondAttribute="centerX" id="kzj-Pf-w1R"/>
+                            <constraint firstAttribute="trailing" secondItem="Gfj-EZ-rel" secondAttribute="trailing" constant="116" id="l4K-bl-TcE">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="1gI-s2-TwG" secondAttribute="centerX" id="mfq-SA-Dg8"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="1gI-s2-TwG"/>
+                                <exclude reference="h3t-w7-efN"/>
+                                <exclude reference="iW7-Kx-cUG"/>
+                                <exclude reference="LbK-IE-Szj"/>
+                                <exclude reference="Gfj-EZ-rel"/>
+                                <exclude reference="nBv-N0-dhE"/>
+                                <exclude reference="bYG-fu-RLf"/>
+                                <exclude reference="pYT-yS-CyW"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="0Gc-Nu-vZX"/>
+                                <exclude reference="NL3-Na-x2z"/>
+                                <exclude reference="P3A-Ls-3bm"/>
+                                <exclude reference="jq4-No-7y4"/>
+                                <exclude reference="4Ls-Iq-jnI"/>
+                                <exclude reference="ItE-PF-dUr"/>
+                                <exclude reference="SMp-rO-KsT"/>
+                                <exclude reference="Uva-Xc-5Ds"/>
+                                <exclude reference="0V6-4Z-8DI"/>
+                                <exclude reference="5fR-dm-x01"/>
+                                <exclude reference="jnX-sY-Z0k"/>
+                                <exclude reference="3LI-Lw-OoD"/>
+                                <exclude reference="7Er-WT-YnH"/>
+                                <exclude reference="Wf4-T3-5T8"/>
+                                <exclude reference="a5b-cr-ghm"/>
+                                <exclude reference="apL-U3-Gu9"/>
+                                <exclude reference="MoH-i7-g2K"/>
+                                <exclude reference="bBy-lQ-wX3"/>
+                                <exclude reference="hoa-kd-PBq"/>
+                                <exclude reference="mfq-SA-Dg8"/>
+                                <exclude reference="ffP-Y8-sRh"/>
+                                <exclude reference="jS1-YY-dmc"/>
+                                <exclude reference="l4K-bl-TcE"/>
+                                <exclude reference="4oU-eh-Dwk"/>
+                                <exclude reference="AK3-V8-APD"/>
+                                <exclude reference="gEh-S5-eEp"/>
+                                <exclude reference="kzj-Pf-w1R"/>
+                                <exclude reference="2tg-DR-sbe"/>
+                                <exclude reference="42W-Sm-xLZ"/>
+                                <exclude reference="OfP-zG-uLj"/>
+                                <exclude reference="Wd0-MO-kUf"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="1gI-s2-TwG"/>
+                                <include reference="h3t-w7-efN"/>
+                                <include reference="iW7-Kx-cUG"/>
+                                <include reference="LbK-IE-Szj"/>
+                                <include reference="Gfj-EZ-rel"/>
+                                <include reference="nBv-N0-dhE"/>
+                                <include reference="bYG-fu-RLf"/>
+                                <include reference="pYT-yS-CyW"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="0Gc-Nu-vZX"/>
+                                <include reference="NL3-Na-x2z"/>
+                                <include reference="P3A-Ls-3bm"/>
+                                <include reference="jq4-No-7y4"/>
+                                <include reference="4Ls-Iq-jnI"/>
+                                <include reference="ItE-PF-dUr"/>
+                                <include reference="SMp-rO-KsT"/>
+                                <include reference="Uva-Xc-5Ds"/>
+                                <include reference="0V6-4Z-8DI"/>
+                                <include reference="5fR-dm-x01"/>
+                                <include reference="jnX-sY-Z0k"/>
+                                <include reference="3LI-Lw-OoD"/>
+                                <include reference="7Er-WT-YnH"/>
+                                <include reference="Wf4-T3-5T8"/>
+                                <include reference="a5b-cr-ghm"/>
+                                <include reference="apL-U3-Gu9"/>
+                                <include reference="MoH-i7-g2K"/>
+                                <include reference="bBy-lQ-wX3"/>
+                                <include reference="hoa-kd-PBq"/>
+                                <include reference="mfq-SA-Dg8"/>
+                                <include reference="ffP-Y8-sRh"/>
+                                <include reference="jS1-YY-dmc"/>
+                                <include reference="l4K-bl-TcE"/>
+                                <include reference="4oU-eh-Dwk"/>
+                                <include reference="AK3-V8-APD"/>
+                                <include reference="gEh-S5-eEp"/>
+                                <include reference="kzj-Pf-w1R"/>
+                                <include reference="2tg-DR-sbe"/>
+                                <include reference="42W-Sm-xLZ"/>
+                                <include reference="OfP-zG-uLj"/>
+                                <include reference="Wd0-MO-kUf"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="backToMenuButton" destination="bYG-fu-RLf" id="EjE-Xq-gKm"/>
+                        <outlet property="instructionText" destination="nBv-N0-dhE" id="RRs-Yn-5NR"/>
+                        <outlet property="onePlayerButton" destination="h3t-w7-efN" id="BIs-Pg-5Pw"/>
+                        <outlet property="twoPlayerButton" destination="iW7-Kx-cUG" id="gzb-p0-GZp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hSO-vc-8R5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-781.5" y="337.5"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -17,10 +290,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" tag="302" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="FiN-lG-1wr">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            <imageView userInteractionEnabled="NO" tag="500" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyBox.png" translatesAutoresizingMaskIntoConstraints="NO" id="im8-eY-UBC">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" tag="110" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="ticTacToeBoard.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yx3-XV-eWU">
+                            <imageView userInteractionEnabled="NO" tag="110" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="tictacobard.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yx3-XV-eWU">
                                 <rect key="frame" x="0.0" y="161" width="414" height="414"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Yx3-XV-eWU" secondAttribute="height" multiplier="1:1" id="mI6-AA-Omw"/>
@@ -2016,32 +2289,23 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="              " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQJ-nm-wYh">
+                            <imageView userInteractionEnabled="NO" tag="501" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyBox.png" translatesAutoresizingMaskIntoConstraints="NO" id="lmT-QL-hiD">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="502" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="              " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQJ-nm-wYh">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
+                                <color key="highlightedColor" red="0.11859657955090028" green="0.58529413739117031" blue="0.86466600529100535" alpha="0.0" colorSpace="calibratedRGB"/>
                             </label>
                             <button opaque="NO" tag="303" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPx-yy-VYm">
                                 <rect key="frame" x="125" y="602" width="165" height="66"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="New Game">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="playAgain:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jbJ-1n-nkl"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="306" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVx-36-DdA">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Instructions">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="helpPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="TUp-Pe-FKE"/>
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="305" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="clip" numberOfLines="8" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rgz-dR-sYt">
@@ -2064,17 +2328,6 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button hidden="YES" opaque="NO" tag="307" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVU-Ar-upB">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Back to game">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="backToGamePressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="c1O-d4-ZHn"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="301" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="X Turn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="D5m-x6-cMc">
                                 <rect key="frame" x="97" y="75" width="221" height="54"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -2092,14 +2345,17 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVF-MY-R9g">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <string key="text">Instructions                                                                                              Win three games of Tic Tac Toe in a row!
-You can only play in the big field that corresponds to the last small field your opponent played. When you are sent to a field that is already decided, you get to choose freely.</string>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <button opaque="NO" tag="503" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTc-nY-sn0">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Main Menu">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="mainMenu:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="iXF-VU-1og"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -2118,6 +2374,9 @@ You can only play in the big field that corresponds to the last small field your
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="jJF-vE-Eqa" firstAttribute="top" secondItem="rf4-xs-Hhc" secondAttribute="bottom" constant="3" id="0mU-BC-cvd">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstAttribute="bottom" secondItem="lmT-QL-hiD" secondAttribute="bottom" constant="25" id="1HY-Em-pNC">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="P8l-yI-pWX" firstAttribute="leading" secondItem="GWD-W8-lgn" secondAttribute="trailing" constant="3" id="1U0-0A-KmW">
@@ -2214,12 +2473,14 @@ You can only play in the big field that corresponds to the last small field your
                             <constraint firstItem="moK-9O-DYw" firstAttribute="width" secondItem="Cnz-tQ-Wqx" secondAttribute="height" multiplier="3:1" id="9dd-1h-dKm"/>
                             <constraint firstItem="nTi-GR-Ga3" firstAttribute="width" secondItem="moK-9O-DYw" secondAttribute="height" multiplier="1:3" id="9gs-GG-QjG"/>
                             <constraint firstItem="dXz-X4-14e" firstAttribute="width" secondItem="dkj-0I-7ES" secondAttribute="height" multiplier="1:3" id="9xp-H8-2dt"/>
+                            <constraint firstAttribute="trailing" secondItem="lmT-QL-hiD" secondAttribute="trailing" constant="82" id="A6t-Zl-XWN">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="ZlP-Uw-dIH" firstAttribute="top" secondItem="moK-9O-DYw" secondAttribute="bottom" id="AbR-IE-Og5"/>
                             <constraint firstItem="4NL-QM-UKg" firstAttribute="top" secondItem="jYw-pS-2v4" secondAttribute="top" constant="-9" id="B3e-Eu-FjF">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstAttribute="bottom" secondItem="jPx-yy-VYm" secondAttribute="bottom" id="B3e-Ry-MF3"/>
-                            <constraint firstAttribute="centerX" secondItem="ZVU-Ar-upB" secondAttribute="centerX" id="BBb-2a-CMH"/>
                             <constraint firstItem="hQS-2Y-Xop" firstAttribute="height" secondItem="NcU-eI-2u2" secondAttribute="height" id="BYG-XO-GJ9"/>
                             <constraint firstItem="6yv-Nu-puz" firstAttribute="leading" secondItem="w97-Wi-Jfa" secondAttribute="leading" constant="6" id="Bbx-VU-1VW">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
@@ -2237,6 +2498,7 @@ You can only play in the big field that corresponds to the last small field your
                             <constraint firstItem="Yx3-XV-eWU" firstAttribute="leading" secondItem="Ybr-bz-4eg" secondAttribute="leading" id="DGn-iS-2xb"/>
                             <constraint firstItem="Nqw-9O-s5X" firstAttribute="width" secondItem="qdR-UV-cjy" secondAttribute="height" multiplier="3:1" id="DKy-PS-Oz5"/>
                             <constraint firstItem="eLO-6O-4pf" firstAttribute="height" secondItem="Bvr-Az-D6c" secondAttribute="height" id="DN1-gp-qAh"/>
+                            <constraint firstAttribute="bottom" secondItem="eTc-nY-sn0" secondAttribute="bottom" id="DQI-yP-84Q"/>
                             <constraint firstItem="dkj-0I-7ES" firstAttribute="width" secondItem="02o-wF-Ysn" secondAttribute="height" multiplier="3:1" id="DYR-a4-nSC"/>
                             <constraint firstItem="L1W-Wc-Q5y" firstAttribute="top" secondItem="w97-Wi-Jfa" secondAttribute="top" constant="38" id="DgL-ia-v55">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
@@ -2262,13 +2524,13 @@ You can only play in the big field that corresponds to the last small field your
                             <constraint firstItem="dTJ-vH-1Xy" firstAttribute="top" secondItem="aoV-jd-PYr" secondAttribute="bottom" constant="3" id="F9D-g3-83W">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstAttribute="trailing" secondItem="eTc-nY-sn0" secondAttribute="trailing" constant="58" id="FCP-uD-lCl">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="dGG-HD-WLR" firstAttribute="leading" secondItem="fIs-Do-AQ8" secondAttribute="trailing" constant="7" id="FM5-2j-WLK">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="Yx3-XV-eWU" firstAttribute="leading" secondItem="Nqw-9O-s5X" secondAttribute="leading" id="FQg-Vh-mM6"/>
-                            <constraint firstAttribute="trailing" secondItem="nVF-MY-R9g" secondAttribute="trailing" constant="16" id="FX9-t0-wMq">
-                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
-                            </constraint>
                             <constraint firstItem="iGx-gU-97x" firstAttribute="top" secondItem="ZR9-8d-UwM" secondAttribute="bottom" constant="8" id="FZx-Q0-3yB">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
@@ -2281,21 +2543,23 @@ You can only play in the big field that corresponds to the last small field your
                             <constraint firstItem="Rp4-zl-mMf" firstAttribute="top" secondItem="dGG-HD-WLR" secondAttribute="bottom" constant="-1" id="FsB-Vb-Htr">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
-                            <constraint firstItem="03o-1b-Qh4" firstAttribute="width" secondItem="UVx-36-DdA" secondAttribute="width" id="G3E-8u-n03"/>
                             <constraint firstItem="fzy-An-Q2c" firstAttribute="top" secondItem="fae-g7-nYk" secondAttribute="bottom" constant="8" id="G3b-gZ-bLs">
-                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
-                            </constraint>
-                            <constraint firstItem="hQS-2Y-Xop" firstAttribute="bottom" secondItem="nVF-MY-R9g" secondAttribute="bottom" constant="19" id="G4E-g5-W2c">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="dkj-0I-7ES" firstAttribute="leading" secondItem="Ybr-bz-4eg" secondAttribute="trailing" id="GUW-CZ-VTD"/>
                             <constraint firstItem="ZXX-Ee-uNM" firstAttribute="top" secondItem="sSO-bE-XQY" secondAttribute="bottom" constant="3" id="GWX-wN-oBt">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="lmT-QL-hiD" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="92" id="GdG-zo-naU">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="DEP-ff-5VF" firstAttribute="top" secondItem="4NL-QM-UKg" secondAttribute="top" constant="9" id="Gnn-nA-Ad7">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="FTO-Qr-NVg" firstAttribute="leading" secondItem="Fej-oJ-2Of" secondAttribute="trailing" constant="8" id="Gpb-dr-EB1">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="Rgz-dR-sYt" firstAttribute="top" secondItem="im8-eY-UBC" secondAttribute="bottom" constant="5" id="Gu2-CS-45u">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="PYe-2z-Ogh" firstAttribute="leading" secondItem="o3E-Ab-kLV" secondAttribute="trailing" constant="4" id="GxP-ar-Yts">
@@ -2402,9 +2666,6 @@ You can only play in the big field that corresponds to the last small field your
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="ZR9-8d-UwM" firstAttribute="leading" secondItem="dvq-TD-Ss1" secondAttribute="trailing" constant="-1" id="ScG-Ce-k37"/>
-                            <constraint firstItem="nVF-MY-R9g" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="-6" id="Se3-YO-PoM">
-                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
-                            </constraint>
                             <constraint firstItem="Ybr-bz-4eg" firstAttribute="width" secondItem="p1K-2t-GrS" secondAttribute="height" multiplier="3:1" id="Skx-1H-qpP"/>
                             <constraint firstItem="Hsi-T9-1FE" firstAttribute="leading" secondItem="hqs-AG-CHA" secondAttribute="trailing" constant="3" id="T6R-Zo-WJe">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
@@ -2443,17 +2704,16 @@ You can only play in the big field that corresponds to the last small field your
                             </constraint>
                             <constraint firstItem="dvq-TD-Ss1" firstAttribute="width" secondItem="4NL-QM-UKg" secondAttribute="height" multiplier="1:3" id="VGU-ab-p4W"/>
                             <constraint firstItem="hQS-2Y-Xop" firstAttribute="leading" secondItem="Bvr-Az-D6c" secondAttribute="trailing" id="VLE-j0-tge"/>
+                            <constraint firstItem="jPx-yy-VYm" firstAttribute="width" secondItem="eTc-nY-sn0" secondAttribute="width" id="VMn-jG-TU2"/>
                             <constraint firstItem="eLO-6O-4pf" firstAttribute="width" secondItem="Bvr-Az-D6c" secondAttribute="width" id="Vml-lB-TmJ"/>
                             <constraint firstItem="pdQ-AT-Pxi" firstAttribute="width" secondItem="w97-Wi-Jfa" secondAttribute="height" multiplier="1:3" id="Vqm-VL-T6D"/>
                             <constraint firstItem="6yv-Nu-puz" firstAttribute="top" secondItem="tQV-1t-xfB" secondAttribute="bottom" id="W3F-CT-nbe"/>
                             <constraint firstItem="Yx3-XV-eWU" firstAttribute="width" secondItem="Ui6-c5-W0J" secondAttribute="height" multiplier="3:1" id="WNx-XN-H51"/>
                             <constraint firstItem="Yx3-XV-eWU" firstAttribute="width" secondItem="dkj-0I-7ES" secondAttribute="height" multiplier="3:1" id="WYO-k1-dEV"/>
-                            <constraint firstAttribute="trailing" secondItem="UVx-36-DdA" secondAttribute="trailing" id="Wdp-BY-DSy"/>
                             <constraint firstItem="4NL-QM-UKg" firstAttribute="leading" secondItem="hqs-AG-CHA" secondAttribute="leading" constant="-7" id="WgI-28-ziZ">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="E4H-0c-aoL" firstAttribute="width" secondItem="dkj-0I-7ES" secondAttribute="height" multiplier="1:3" id="Wlv-al-y8A"/>
-                            <constraint firstAttribute="bottom" secondItem="UVx-36-DdA" secondAttribute="bottom" id="WqM-Uw-uLl"/>
                             <constraint firstItem="Hsi-T9-1FE" firstAttribute="top" secondItem="DEP-ff-5VF" secondAttribute="bottom" constant="2" id="Wtb-XN-uas">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
@@ -2520,7 +2780,6 @@ You can only play in the big field that corresponds to the last small field your
                             <constraint firstItem="a03-ct-pwH" firstAttribute="leading" secondItem="dXz-X4-14e" secondAttribute="trailing" constant="3" id="cVB-1w-ibi">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
-                            <constraint firstItem="SQJ-nm-wYh" firstAttribute="height" secondItem="UVx-36-DdA" secondAttribute="height" id="ca7-Ha-dKO"/>
                             <constraint firstItem="moK-9O-DYw" firstAttribute="width" secondItem="eU3-38-2A0" secondAttribute="height" multiplier="3:1" id="cfg-GI-ylg"/>
                             <constraint firstItem="a03-ct-pwH" firstAttribute="width" secondItem="dkj-0I-7ES" secondAttribute="height" multiplier="1:3" id="cnf-Mb-rJJ"/>
                             <constraint firstItem="Jgg-9g-dSY" firstAttribute="leading" secondItem="uVN-xC-vw8" secondAttribute="trailing" constant="-2" id="cwx-hf-1As">
@@ -2572,6 +2831,9 @@ You can only play in the big field that corresponds to the last small field your
                             <constraint firstItem="rf4-xs-Hhc" firstAttribute="leading" secondItem="gnO-L8-AyP" secondAttribute="trailing" constant="4" id="g0l-AC-zqK">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="SQJ-nm-wYh" firstAttribute="bottom" secondItem="eTc-nY-sn0" secondAttribute="bottom" constant="48" id="g6P-FJ-g7p">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="dkj-0I-7ES" firstAttribute="width" secondItem="I5z-Of-Qjo" secondAttribute="height" multiplier="3:1" id="gH5-3K-3d6"/>
                             <constraint firstItem="moK-9O-DYw" firstAttribute="top" secondItem="PYe-2z-Ogh" secondAttribute="top" constant="-9" id="gRD-0v-xQ8">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
@@ -2583,6 +2845,9 @@ You can only play in the big field that corresponds to the last small field your
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="3OG-et-Pnw" firstAttribute="top" secondItem="ZXX-Ee-uNM" secondAttribute="bottom" constant="-1" id="ghZ-Rf-eHV">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="im8-eY-UBC" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="87" id="gk5-tz-MRH">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="ea5-69-ZmV" firstAttribute="top" secondItem="Vws-Af-9Bg" secondAttribute="bottom" constant="3" id="h0I-mh-CJs">
@@ -2609,7 +2874,6 @@ You can only play in the big field that corresponds to the last small field your
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="nIT-DS-dg2" firstAttribute="top" secondItem="hqs-AG-CHA" secondAttribute="bottom" id="jJp-9i-Z6z"/>
-                            <constraint firstAttribute="bottom" secondItem="FiN-lG-1wr" secondAttribute="bottom" id="jWe-J5-IIM"/>
                             <constraint firstItem="fIs-Do-AQ8" firstAttribute="leading" secondItem="P8l-yI-pWX" secondAttribute="trailing" id="jhW-Rm-uSp"/>
                             <constraint firstItem="L1W-Wc-Q5y" firstAttribute="height" secondItem="CQw-aD-5nB" secondAttribute="height" id="jmE-TI-Kjp"/>
                             <constraint firstItem="CQw-aD-5nB" firstAttribute="height" secondItem="Bvr-Az-D6c" secondAttribute="height" id="jrs-Fa-BJv"/>
@@ -2617,7 +2881,6 @@ You can only play in the big field that corresponds to the last small field your
                             <constraint firstItem="w97-Wi-Jfa" firstAttribute="width" secondItem="4TY-jS-N8Z" secondAttribute="height" multiplier="3:1" id="jxS-GE-4EM"/>
                             <constraint firstItem="Ybr-bz-4eg" firstAttribute="width" secondItem="dTJ-vH-1Xy" secondAttribute="height" multiplier="3:1" id="k09-3l-2Rd"/>
                             <constraint firstItem="P8l-yI-pWX" firstAttribute="width" secondItem="Nqw-9O-s5X" secondAttribute="height" multiplier="1:3" id="k1C-ml-dwR"/>
-                            <constraint firstItem="eLO-6O-4pf" firstAttribute="width" secondItem="ZVU-Ar-upB" secondAttribute="width" id="k4m-K7-9mq"/>
                             <constraint firstItem="L1W-Wc-Q5y" firstAttribute="width" secondItem="CQw-aD-5nB" secondAttribute="width" id="krc-JV-Hmx"/>
                             <constraint firstItem="E4H-0c-aoL" firstAttribute="leading" secondItem="I5z-Of-Qjo" secondAttribute="trailing" constant="4" id="l4H-fy-PWq">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
@@ -2636,6 +2899,7 @@ You can only play in the big field that corresponds to the last small field your
                             <constraint firstItem="uVN-xC-vw8" firstAttribute="leading" secondItem="4TY-jS-N8Z" secondAttribute="trailing" constant="3" id="mAY-RA-VSo">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="jPx-yy-VYm" firstAttribute="height" secondItem="eTc-nY-sn0" secondAttribute="height" id="mDI-V8-Cmy"/>
                             <constraint firstItem="jPx-yy-VYm" firstAttribute="width" secondItem="sNt-J4-Ytg" secondAttribute="width" id="mhc-kX-X2S"/>
                             <constraint firstItem="a03-ct-pwH" firstAttribute="top" secondItem="3OG-et-Pnw" secondAttribute="bottom" constant="8" id="mjc-48-rMr">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
@@ -2646,8 +2910,10 @@ You can only play in the big field that corresponds to the last small field your
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="lC6-Gc-9Xt" firstAttribute="top" secondItem="eU3-38-2A0" secondAttribute="bottom" id="myc-0A-IND"/>
+                            <constraint firstAttribute="trailing" secondItem="im8-eY-UBC" secondAttribute="trailing" constant="87" id="n3g-QY-4cC">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="w97-Wi-Jfa" firstAttribute="leading" secondItem="4TY-jS-N8Z" secondAttribute="leading" id="nCI-eI-XGY"/>
-                            <constraint firstAttribute="trailing" secondItem="FiN-lG-1wr" secondAttribute="trailing" id="nGM-fY-JRa"/>
                             <constraint firstItem="CQw-aD-5nB" firstAttribute="leading" secondItem="L1W-Wc-Q5y" secondAttribute="trailing" id="nJ0-St-ugQ"/>
                             <constraint firstItem="D5R-pz-MTX" firstAttribute="top" secondItem="GWD-W8-lgn" secondAttribute="bottom" constant="-1" id="nQN-2I-DZN">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
@@ -2673,10 +2939,8 @@ You can only play in the big field that corresponds to the last small field your
                             <constraint firstItem="39D-w6-fYR" firstAttribute="leading" secondItem="ADO-r1-zp6" secondAttribute="trailing" constant="4" id="pAo-18-Fed">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
-                            <constraint firstItem="eLO-6O-4pf" firstAttribute="height" secondItem="ZVU-Ar-upB" secondAttribute="height" id="pIL-0B-UVJ"/>
                             <constraint firstItem="QmY-xy-IIE" firstAttribute="width" secondItem="Ybr-bz-4eg" secondAttribute="height" multiplier="1:3" id="pd7-dG-ech"/>
                             <constraint firstItem="9d5-cH-YLJ" firstAttribute="width" secondItem="dkj-0I-7ES" secondAttribute="height" multiplier="1:3" id="pj7-m1-N2u"/>
-                            <constraint firstItem="ZVU-Ar-upB" firstAttribute="top" secondItem="eLO-6O-4pf" secondAttribute="bottom" constant="-130" id="ptu-Yp-jXP"/>
                             <constraint firstItem="D5m-x6-cMc" firstAttribute="width" secondItem="03o-1b-Qh4" secondAttribute="width" id="puV-Ui-bfn"/>
                             <constraint firstItem="I5z-Of-Qjo" firstAttribute="leading" secondItem="kBO-Hy-g7m" secondAttribute="trailing" constant="8" id="pyk-UE-hyw">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
@@ -2713,7 +2977,6 @@ You can only play in the big field that corresponds to the last small field your
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="w97-Wi-Jfa" firstAttribute="width" secondItem="tQV-1t-xfB" secondAttribute="height" multiplier="3:1" id="u3q-W8-zQT"/>
-                            <constraint firstItem="FiN-lG-1wr" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="uPO-3x-fd2"/>
                             <constraint firstItem="Vws-Af-9Bg" firstAttribute="leading" secondItem="eL4-AW-2Jd" secondAttribute="trailing" constant="4" id="uX3-wn-fJP">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
@@ -2725,15 +2988,14 @@ You can only play in the big field that corresponds to the last small field your
                             <constraint firstItem="VLM-eN-INV" firstAttribute="leading" secondItem="Hsi-T9-1FE" secondAttribute="trailing" constant="-1" id="ut9-gO-gwb">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="lmT-QL-hiD" firstAttribute="top" secondItem="Rgz-dR-sYt" secondAttribute="bottom" constant="8" id="v5c-us-npI">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="ZR9-8d-UwM" firstAttribute="top" secondItem="VLM-eN-INV" secondAttribute="bottom" id="vH5-Eu-crT"/>
-                            <constraint firstItem="FiN-lG-1wr" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="vVt-sQ-jEf"/>
                             <constraint firstItem="SQJ-nm-wYh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="2" id="vpt-ig-Goq">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="d92-FN-QR6" firstAttribute="top" secondItem="S89-nL-h9f" secondAttribute="bottom" constant="-3" id="w4r-xo-YBP">
-                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
-                            </constraint>
-                            <constraint firstItem="NcU-eI-2u2" firstAttribute="top" secondItem="nVF-MY-R9g" secondAttribute="top" constant="-38" id="wLZ-PJ-gR4">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="q8d-VT-sdI" firstAttribute="top" secondItem="rs3-8X-zTz" secondAttribute="bottom" constant="4" id="wME-lc-RfM">
@@ -2759,6 +3021,9 @@ You can only play in the big field that corresponds to the last small field your
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="Ui6-c5-W0J" firstAttribute="width" secondItem="Rp4-zl-mMf" secondAttribute="height" multiplier="3:1" id="ybk-SG-WtU"/>
+                            <constraint firstItem="im8-eY-UBC" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="28" id="ydI-Ry-IxE">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="4PZ-rV-n62" firstAttribute="leading" secondItem="pdQ-AT-Pxi" secondAttribute="trailing" constant="-2" id="yi8-Kq-BSp">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
@@ -2775,33 +3040,33 @@ You can only play in the big field that corresponds to the last small field your
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="im8-eY-UBC"/>
+                                <exclude reference="lmT-QL-hiD"/>
                                 <exclude reference="SQJ-nm-wYh"/>
-                                <exclude reference="UVx-36-DdA"/>
                                 <exclude reference="Rgz-dR-sYt"/>
-                                <exclude reference="ZVU-Ar-upB"/>
-                                <exclude reference="nVF-MY-R9g"/>
+                                <exclude reference="eTc-nY-sn0"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="5Tw-Kr-8tJ"/>
                                 <exclude reference="6km-Af-72m"/>
+                                <exclude reference="Gu2-CS-45u"/>
                                 <exclude reference="o7Q-4M-BcE"/>
                                 <exclude reference="qb6-nv-pUo"/>
                                 <exclude reference="3AK-tC-5iW"/>
                                 <exclude reference="V9Z-6Q-aOA"/>
                                 <exclude reference="XpN-gs-moa"/>
-                                <exclude reference="ca7-Ha-dKO"/>
+                                <exclude reference="g6P-FJ-g7p"/>
                                 <exclude reference="nYS-mU-HYf"/>
                                 <exclude reference="vpt-ig-Goq"/>
-                                <exclude reference="Wdp-BY-DSy"/>
-                                <exclude reference="WqM-Uw-uLl"/>
-                                <exclude reference="BBb-2a-CMH"/>
-                                <exclude reference="ptu-Yp-jXP"/>
-                                <exclude reference="FX9-t0-wMq"/>
-                                <exclude reference="Se3-YO-PoM"/>
-                                <exclude reference="jWe-J5-IIM"/>
-                                <exclude reference="nGM-fY-JRa"/>
-                                <exclude reference="uPO-3x-fd2"/>
-                                <exclude reference="vVt-sQ-jEf"/>
+                                <exclude reference="DQI-yP-84Q"/>
+                                <exclude reference="FCP-uD-lCl"/>
+                                <exclude reference="gk5-tz-MRH"/>
+                                <exclude reference="n3g-QY-4cC"/>
+                                <exclude reference="ydI-Ry-IxE"/>
+                                <exclude reference="1HY-Em-pNC"/>
+                                <exclude reference="A6t-Zl-XWN"/>
+                                <exclude reference="GdG-zo-naU"/>
+                                <exclude reference="v5c-us-npI"/>
                                 <exclude reference="6OP-vD-nUZ"/>
                                 <exclude reference="Ikj-TY-zyO"/>
                                 <exclude reference="puV-Ui-bfn"/>
@@ -2904,7 +3169,6 @@ You can only play in the big field that corresponds to the last small field your
                                 <exclude reference="4xz-4J-1x1"/>
                                 <exclude reference="c3c-da-D1h"/>
                                 <exclude reference="sp5-v5-Stn"/>
-                                <exclude reference="wLZ-PJ-gR4"/>
                                 <exclude reference="yog-PW-QD8"/>
                                 <exclude reference="2jo-ay-DdS"/>
                                 <exclude reference="60Y-zZ-VE5"/>
@@ -2974,7 +3238,6 @@ You can only play in the big field that corresponds to the last small field your
                                 <exclude reference="TPx-j5-q4M"/>
                                 <exclude reference="Ut2-dA-o7d"/>
                                 <exclude reference="BYG-XO-GJ9"/>
-                                <exclude reference="G4E-g5-W2c"/>
                                 <exclude reference="IK9-to-noo"/>
                                 <exclude reference="Jwb-Ur-8Nx"/>
                                 <exclude reference="VLE-j0-tge"/>
@@ -3035,8 +3298,6 @@ You can only play in the big field that corresponds to the last small field your
                                 <exclude reference="DN1-gp-qAh"/>
                                 <exclude reference="HHy-uW-NKW"/>
                                 <exclude reference="Vml-lB-TmJ"/>
-                                <exclude reference="k4m-K7-9mq"/>
-                                <exclude reference="pIL-0B-UVJ"/>
                                 <exclude reference="9xp-H8-2dt"/>
                                 <exclude reference="cTg-MJ-Atj"/>
                                 <exclude reference="gXA-aj-mbc"/>
@@ -3066,7 +3327,6 @@ You can only play in the big field that corresponds to the last small field your
                                 <exclude reference="53K-ZH-RHh"/>
                                 <exclude reference="5CT-4Y-Fxw"/>
                                 <exclude reference="6os-bi-fZH"/>
-                                <exclude reference="G3E-8u-n03"/>
                                 <exclude reference="KeS-Ow-2Av"/>
                                 <exclude reference="XHE-Ss-RNw"/>
                                 <exclude reference="6UC-gD-vPL"/>
@@ -3116,6 +3376,8 @@ You can only play in the big field that corresponds to the last small field your
                                 <exclude reference="wME-lc-RfM"/>
                                 <exclude reference="B3e-Ry-MF3"/>
                                 <exclude reference="Lkq-NJ-e28"/>
+                                <exclude reference="VMn-jG-TU2"/>
+                                <exclude reference="mDI-V8-Cmy"/>
                                 <exclude reference="mhc-kX-X2S"/>
                                 <exclude reference="Zb6-ow-LmX"/>
                                 <exclude reference="a0A-3B-JiT"/>
@@ -3127,33 +3389,33 @@ You can only play in the big field that corresponds to the last small field your
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
+                                <include reference="im8-eY-UBC"/>
+                                <include reference="lmT-QL-hiD"/>
                                 <include reference="SQJ-nm-wYh"/>
-                                <include reference="UVx-36-DdA"/>
                                 <include reference="Rgz-dR-sYt"/>
-                                <include reference="ZVU-Ar-upB"/>
-                                <include reference="nVF-MY-R9g"/>
+                                <include reference="eTc-nY-sn0"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="5Tw-Kr-8tJ"/>
                                 <include reference="6km-Af-72m"/>
+                                <include reference="Gu2-CS-45u"/>
                                 <include reference="o7Q-4M-BcE"/>
                                 <include reference="qb6-nv-pUo"/>
                                 <include reference="3AK-tC-5iW"/>
                                 <include reference="V9Z-6Q-aOA"/>
                                 <include reference="XpN-gs-moa"/>
-                                <include reference="ca7-Ha-dKO"/>
+                                <exclude reference="g6P-FJ-g7p"/>
                                 <include reference="nYS-mU-HYf"/>
                                 <include reference="vpt-ig-Goq"/>
-                                <include reference="Wdp-BY-DSy"/>
-                                <include reference="WqM-Uw-uLl"/>
-                                <include reference="BBb-2a-CMH"/>
-                                <include reference="ptu-Yp-jXP"/>
-                                <include reference="FX9-t0-wMq"/>
-                                <include reference="Se3-YO-PoM"/>
-                                <include reference="jWe-J5-IIM"/>
-                                <include reference="nGM-fY-JRa"/>
-                                <include reference="uPO-3x-fd2"/>
-                                <include reference="vVt-sQ-jEf"/>
+                                <include reference="DQI-yP-84Q"/>
+                                <include reference="FCP-uD-lCl"/>
+                                <include reference="gk5-tz-MRH"/>
+                                <include reference="n3g-QY-4cC"/>
+                                <include reference="ydI-Ry-IxE"/>
+                                <include reference="1HY-Em-pNC"/>
+                                <include reference="A6t-Zl-XWN"/>
+                                <include reference="GdG-zo-naU"/>
+                                <include reference="v5c-us-npI"/>
                                 <include reference="6OP-vD-nUZ"/>
                                 <include reference="Ikj-TY-zyO"/>
                                 <include reference="puV-Ui-bfn"/>
@@ -3256,7 +3518,6 @@ You can only play in the big field that corresponds to the last small field your
                                 <include reference="4xz-4J-1x1"/>
                                 <include reference="c3c-da-D1h"/>
                                 <include reference="sp5-v5-Stn"/>
-                                <include reference="wLZ-PJ-gR4"/>
                                 <include reference="yog-PW-QD8"/>
                                 <include reference="2jo-ay-DdS"/>
                                 <include reference="60Y-zZ-VE5"/>
@@ -3326,7 +3587,6 @@ You can only play in the big field that corresponds to the last small field your
                                 <include reference="TPx-j5-q4M"/>
                                 <include reference="Ut2-dA-o7d"/>
                                 <include reference="BYG-XO-GJ9"/>
-                                <include reference="G4E-g5-W2c"/>
                                 <include reference="IK9-to-noo"/>
                                 <include reference="Jwb-Ur-8Nx"/>
                                 <include reference="VLE-j0-tge"/>
@@ -3387,8 +3647,6 @@ You can only play in the big field that corresponds to the last small field your
                                 <include reference="DN1-gp-qAh"/>
                                 <include reference="HHy-uW-NKW"/>
                                 <include reference="Vml-lB-TmJ"/>
-                                <include reference="k4m-K7-9mq"/>
-                                <include reference="pIL-0B-UVJ"/>
                                 <include reference="9xp-H8-2dt"/>
                                 <include reference="cTg-MJ-Atj"/>
                                 <include reference="gXA-aj-mbc"/>
@@ -3418,7 +3676,6 @@ You can only play in the big field that corresponds to the last small field your
                                 <include reference="53K-ZH-RHh"/>
                                 <include reference="5CT-4Y-Fxw"/>
                                 <include reference="6os-bi-fZH"/>
-                                <include reference="G3E-8u-n03"/>
                                 <include reference="KeS-Ow-2Av"/>
                                 <include reference="XHE-Ss-RNw"/>
                                 <include reference="6UC-gD-vPL"/>
@@ -3468,6 +3725,8 @@ You can only play in the big field that corresponds to the last small field your
                                 <include reference="wME-lc-RfM"/>
                                 <include reference="B3e-Ry-MF3"/>
                                 <include reference="Lkq-NJ-e28"/>
+                                <include reference="VMn-jG-TU2"/>
+                                <include reference="mDI-V8-Cmy"/>
                                 <include reference="mhc-kX-X2S"/>
                                 <include reference="Zb6-ow-LmX"/>
                                 <include reference="a0A-3B-JiT"/>
@@ -3478,14 +3737,12 @@ You can only play in the big field that corresponds to the last small field your
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="mx6-aa-FSz"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
-                        <outlet property="backToGame" destination="ZVU-Ar-upB" id="PJQ-4V-xbM"/>
-                        <outlet property="background" destination="FiN-lG-1wr" id="0xQ-W6-s5l"/>
                         <outlet property="board0" destination="w97-Wi-Jfa" id="P3T-TX-BFU"/>
                         <outlet property="button0" destination="L1W-Wc-Q5y" id="YnY-o5-HVS"/>
                         <outlet property="instructions" destination="Rgz-dR-sYt" id="LEq-GN-YW1"/>
-                        <outlet property="instructionsText" destination="nVF-MY-R9g" id="Egg-ch-XM2"/>
                         <outlet property="playAgainButton" destination="jPx-yy-VYm" id="8bV-NF-3sc"/>
                         <outlet property="result" destination="D5m-x6-cMc" id="nME-Qd-Wli"/>
                     </connections>
@@ -3496,8 +3753,13 @@ You can only play in the big field that corresponds to the last small field your
         </scene>
     </scenes>
     <resources>
-        <image name="background.png" width="414" height="736"/>
+        <image name="emptyBox.png" width="900" height="300"/>
         <image name="goBoard.png" width="300" height="300"/>
-        <image name="ticTacToeBoard.png" width="414" height="414"/>
+        <image name="mainmenu.png" width="900" height="900"/>
+        <image name="tictacobard.png" width="900" height="900"/>
+        <image name="title2.png" width="900" height="300"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="hoS-Wi-Pw8"/>
+    </inferredMetricsTieBreakers>
 </document>
